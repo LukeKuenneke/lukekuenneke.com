@@ -1,0 +1,35 @@
+variables:
+  JEKYLL_ENV: production
+
+# Build
+build-site:
+  image: ruby:2.4.2
+  stage: build
+  script:
+  - bundle install
+  - bundle exec jekyll build -d public
+  artifacts:
+    paths:
+    - public
+
+# Deploy
+pages:
+  image: debian:latest
+  stage: deploy
+  environment:
+    name: production
+    url: https://www.kuenneke.net
+  dependencies:
+    - build-site
+  before_script:
+  - apt-get update -qy
+  - apt-get install brotli -qy
+  script:
+    - cd public
+    - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k -8 {} \; # gzip compress all files
+    - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli --input {} --force --output {}.br \; #Brotli compress all files
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
