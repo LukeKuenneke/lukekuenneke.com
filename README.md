@@ -1,4 +1,4 @@
-# Kuenneke.net #
+# lukekuenneke.com #
 
 Repository for Luke Kuenneke's website
 
@@ -6,4 +6,4 @@ Repository for Luke Kuenneke's website
 | Branch | Status
 | ------ | ------
 | Master | [![Build status](https://gitlab.com/LukeKuenneke/lukekuenneke.com/badges/master/build.svg)](https://gitlab.com/LukeKuenneke/lukekuenneke.com/commits/master)
-| Develop | [![Build status](https://gitlab.com/LukeKuenneke/kuenneke.net/badges/develop/build.svg)](https://gitlab.com/LukeKuenneke/lukekuenneke.com/commits/develop)
+| Develop | [![Build status](https://gitlab.com/LukeKuenneke/lukekuenneke.com/badges/develop/build.svg)](https://gitlab.com/LukeKuenneke/lukekuenneke.com/commits/develop)
