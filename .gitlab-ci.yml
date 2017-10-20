@@ -26,7 +26,7 @@ pages:
   stage: deploy
   environment:
     name: production
-    url: https://www.kuenneke.net
+    url: https://www.lukekuenneke.com
   dependencies:
     - build-site
   before_script:
