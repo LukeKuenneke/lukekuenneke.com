@@ -84,7 +84,7 @@ analytics:
 # Site Author
 author:
   name             : "Luke Kuenneke"
-  avatar           : "/assets/images/Luke.jpg"
+  avatar           : "/assets/images/Luke.png"
   bio              : "I like to solve problems and write software."
   location         : "Dayton, OH"
   email            : "Luke.Kuenneke@gmail.com"
