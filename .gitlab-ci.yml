@@ -3,9 +3,10 @@ variables:
 
 # Build
 build-site:
-  image: ruby:2.4.2
+  image: ruby:2.5.1
   stage: build
   script:
+  - add-apt-repository ppa:openjdk-r/ppa -y
   - apt-get update -y
   - apt-get install -y openjdk-7-jre-headless
   - apt-get install -y locales
@@ -34,8 +35,8 @@ pages:
   - apt-get install brotli -qy
   script:
     - cd public
-    - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k -8 {} \; # gzip compress all files
-    - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli --input {} --force --output {}.br \; #Brotli compress all files
+    - find . -type f \( -iname "**" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k -8 {} \; # gzip compress all files
+    - find . -type f \( -iname "**" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli --input {} --force --output {}.br \; #Brotli compress all files
   artifacts:
     paths:
       - public
