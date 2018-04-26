@@ -2,6 +2,10 @@
 
 Repository for Luke Kuenneke's website
 
+Github: https://github.com/LukeKuenneke/lukekuenneke.com
+
+Gitlab: https://gitlab.com/LukeKuenneke/lukekuenneke.com
+
 #### Project Status ####
 | Branch | Status
 | ------ | ------

@@ -5,3 +5,7 @@ ruby "2.4.2"
 gem "jekyll", "3.5.1"
 
 gem "minimal-mistakes-jekyll", "4.6.0"
+
+group :jekyll_plugins do
+  gem "jekyll-youtube"
+end
