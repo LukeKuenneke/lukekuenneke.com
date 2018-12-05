@@ -10,7 +10,6 @@ Gitlab: https://gitlab.com/LukeKuenneke/lukekuenneke.com
 | Branch | Status
 | ------ | ------
 | Master | [![Build status](https://gitlab.com/LukeKuenneke/lukekuenneke.com/badges/master/build.svg)](https://gitlab.com/LukeKuenneke/lukekuenneke.com/commits/master)
-| Develop | [![Build status](https://gitlab.com/LukeKuenneke/lukekuenneke.com/badges/develop/build.svg)](https://gitlab.com/LukeKuenneke/lukekuenneke.com/commits/develop)
 
 
 A Pen created at CodePen.io. You can find this one at https://codepen.io/LukeKuenneke/pen/VVOzRm.

@@ -8,7 +8,6 @@ pages:
   before_script:
   - apt-get update -qy
   - apt-get install brotli -qy
-  - cp -ra ./ public
   script:
     - cd public
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k -8 {} \; # gzip compress all files
