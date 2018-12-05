@@ -1,0 +1,20 @@
+# Deploy
+pages:
+  image: debian:latest
+  stage: deploy
+  environment:
+    name: production
+    url: http://www.lukekuenneke.com
+  before_script:
+  - apt-get update -qy
+  - apt-get install brotli -qy
+  - cp -ra ./ public
+  script:
+    - cd public
+    - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k -8 {} \; # gzip compress all files
+    - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli --input {} --force --output {}.br \; #Brotli compress all files
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
