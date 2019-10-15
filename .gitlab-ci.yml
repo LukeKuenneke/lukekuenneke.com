@@ -6,7 +6,7 @@ pages:
     name: production
     url: http://www.lukekuenneke.com
   before_script:
-  - apt-get update -qy
+    - apt-get update -qy
   script:
     - cd public
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k -8 {} \; # gzip compress all files
