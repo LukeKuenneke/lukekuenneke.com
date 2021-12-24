@@ -47,9 +47,19 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeTesting: {
         base: 'Chrome',
-        flags: ['--headless', '--disable-gpu', '--disable-translate', '--disable-extensions',
-          '--remote-debugging-address=0.0.0.0', '--remote-debugging-port=9876', '--no-proxy-server',
-          '--enable-logging', '--v=1']
+        flags: [
+          '--no-sandbox',
+          '--user-data-dir',
+          '--disable-translate',
+          '--disable-extensions',
+          '--disable-setuid-sandbox',
+          '--no-proxy-server',
+          '--enable-logging',
+          '--remote-debugging-address=0.0.0.0',
+          '--remote-debugging-port=9876',
+          '--headless',
+          '--disable-gpu'
+        ]
       }
     },
     singleRun: false,

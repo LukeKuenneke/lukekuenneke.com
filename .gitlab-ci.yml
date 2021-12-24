@@ -2,20 +2,22 @@ image: node:16.13.1
 
 # Cache dependencies between builds
 cache:
-  key: "$CI_JOB_NAME---$CI_COMMIT_REF_NAME"
+  key: "$CI_JOB_NAME-CACHE-$CI_COMMIT_REF_NAME"
   paths:
     - node_modules/
 
 # Helper method for angular dependencies
 .shared_hidden_key: &install-angular-dependencies # This is a YAML anchor
   before_script:
-    - apt-get update -qy
+    - apt update -qy
+    - apt upgrade -qy
     - npm install
 
 # Unit Testing
 unit-testing:
   <<: *install-angular-dependencies
   script:
+    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
     - npm run test-report-generate
 
 # Production Build
@@ -36,8 +38,9 @@ pages:
     - unit-testing
     - production-build
   before_script:
-    - apt-get update -qy
-    - apt-get install brotli -qy
+    - apt update -qy
+    - apt upgrade -qy
+    - apt install gzip brotli -qy
   script:
     - mv dist/lukekuenneke.com public
     - cd public
