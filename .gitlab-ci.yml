@@ -24,6 +24,7 @@ unit-testing:
 production-build:
   <<: *install-angular-dependencies
   script:
+    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
     - npm run build
   artifacts:
     paths:
@@ -42,7 +43,7 @@ pages:
     - apt upgrade -qy
     - apt install gzip brotli -qy
   script:
-    - mv dist/lukekuenneke.com public
+    - mv dist/static public
     - cd public
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k --best {} \; # gzip compress all files
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli -k {} \; #Brotli compress all files

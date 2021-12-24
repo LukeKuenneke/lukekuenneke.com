@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "node node_modules/@angular/cli/bin/ng.js serve",
     "build": "node node_modules/@angular/cli/bin/ng.js build",
+    "postbuild": "npm run scully",
     "watch": "node node_modules/@angular/cli/bin/ng.js build --watch --configuration development",
     "test": "node node_modules/@angular/cli/bin/ng.js test",
-    "test-report-generate": "node node_modules/@angular/cli/bin/ng.js test --watch=false"
+    "test-report-generate": "node node_modules/@angular/cli/bin/ng.js test --watch=false",
+    "scully": "node node_modules/@scullyio/scully/src/scully.js --scan=true --prod=true"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +22,10 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@angular/service-worker": "~13.1.0",
+    "@scullyio/init": "^2.0.5",
+    "@scullyio/ng-lib": "^2.0.0",
+    "@scullyio/scully": "^2.0.0",
+    "@scullyio/scully-plugin-puppeteer": "^2.0.0",
     "ngx-google-analytics": "^11.2.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
@@ -29,6 +35,7 @@
     "@angular-devkit/build-angular": "~13.1.2",
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
+    "@scullyio/scully-plugin-puppeteer": "^2.0.1",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@types/puppeteer": "^5.4.4",

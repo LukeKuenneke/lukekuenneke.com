@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 
 // Third Party
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    NgxGoogleAnalyticsModule.forRoot('UA-130485370-1')
+    NgxGoogleAnalyticsModule.forRoot('UA-130485370-1'),
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

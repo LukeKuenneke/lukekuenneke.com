@@ -108,3 +108,6 @@ dist
 
 # Misc
 public/
+
+# Scully
+.scully/
