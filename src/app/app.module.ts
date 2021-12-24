@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+// Third Party
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +21,8 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    NgxGoogleAnalyticsModule.forRoot('UA-130485370-1')
   ],
   providers: [],
   bootstrap: [AppComponent]
