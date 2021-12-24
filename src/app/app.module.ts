@@ -9,10 +9,16 @@ import { environment } from '../environments/environment';
 // Third Party
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,9 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     NgxGoogleAnalyticsModule.forRoot('UA-130485370-1'),
-    ScullyLibModule
+    ScullyLibModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
