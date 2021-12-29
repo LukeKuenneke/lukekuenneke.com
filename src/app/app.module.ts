@@ -10,11 +10,14 @@ import { environment } from '../environments/environment';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// Componenents 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './components/home/home.component';
 import { ResumeComponent } from './components/resume/resume.component';
+
 
 @NgModule({
   declarations: [
