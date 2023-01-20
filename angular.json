@@ -111,5 +111,7 @@
       }
     }
   },
-  "defaultProject": "lukekuenneke.com"
+  "cli": {
+    "analytics": false
+  }
 }
