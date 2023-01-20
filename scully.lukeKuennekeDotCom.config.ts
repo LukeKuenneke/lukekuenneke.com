@@ -9,7 +9,7 @@ process.env.CHROMIUM_PATH = require('puppeteer').executablePath();
 
 export const config: ScullyConfig = {
   projectRoot: "./src",
-  projectName: "lukekuenneke.com",
+  projectName: "lukeKuennekeDotCom",
   outDir: './dist/static',
   defaultPostRenderers: ['seoHrefOptimise'],
   routes: {
