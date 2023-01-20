@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "serve": "node node_modules/@angular/cli/bin/ng.js serve",
-    "build": "node node_modules/@angular/cli/bin/ng.js build",
+    "serve": "node node_modules/@angular/cli/bin/ng.js serve lukeKuennekeDotCom",
+    "build": "node node_modules/@angular/cli/bin/ng.js build lukeKuennekeDotCom",
     "postbuild": "npm run scully",
     "watch": "node node_modules/@angular/cli/bin/ng.js build --watch --configuration development",
     "test": "node node_modules/@angular/cli/bin/ng.js test",
     "test-report-generate": "node node_modules/@angular/cli/bin/ng.js test --watch=false",
-    "scully": "node node_modules/@scullyio/scully/src/scully.js --np=true --scan=true --prod=true"
+    "scully": "node node_modules/@scullyio/scully/src/scully.js --project=lukeKuennekeDotCom --np=true --scan=true --prod=true --stats=true"
   },
   "private": true,
   "dependencies": {
