@@ -113,5 +113,7 @@
   },
   "cli": {
     "analytics": false
-  }
+  },
+  "scullyNote": "Scully relies upon this defaultProject value for generating static pages",
+  "defaultProject": "lukekuenneke.com"
 }
