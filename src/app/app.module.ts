@@ -36,7 +36,7 @@ import { ResumeComponent } from './components/resume/resume.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    NgxGoogleAnalyticsModule.forRoot('UA-130485370-1'),
+    NgxGoogleAnalyticsModule.forRoot('G-YP1CFCTRZK'),
     ScullyLibModule,
     NgbModule,
     FontAwesomeModule
