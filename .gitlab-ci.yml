@@ -1,4 +1,4 @@
-image: node:18.13.0
+image: node:18.14.0
 
 # Helper method for angular dependencies
 .shared_hidden_key: &install-angular-dependencies # This is a YAML anchor
