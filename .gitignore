@@ -112,3 +112,6 @@ public/
 # Scully
 .scully/
 scullyStats.json
+
+#GitLab CI Local
+.gitlab-ci-local
