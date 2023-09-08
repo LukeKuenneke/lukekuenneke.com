@@ -1,4 +1,4 @@
-image: node:18.16.1
+image: node:18.17.1
 
 # Helper method for angular dependencies
 .shared_hidden_key: &install-angular-dependencies # This is a YAML anchor
@@ -7,15 +7,8 @@ image: node:18.16.1
     - apt upgrade -qy
     - npm install
 
-# Unit Testing
-unit-testing:
-  <<: *install-angular-dependencies
-  script:
-    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
-    - npm run test-report-generate
-
-# Production Build
 production-build:
+  stage: build
   <<: *install-angular-dependencies
   script:
     - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
@@ -24,7 +17,13 @@ production-build:
     paths:
       - dist
 
-# Deploy
+unit-testing:
+  stage: test
+  <<: *install-angular-dependencies
+  script:
+    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
+    - npm run test-report-generate
+
 pages:
   stage: deploy
   environment:
