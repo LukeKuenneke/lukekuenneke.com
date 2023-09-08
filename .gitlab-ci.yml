@@ -19,27 +19,59 @@ production-build:
 
 unit-testing:
   stage: test
+  needs: []
   <<: *install-angular-dependencies
   script:
     - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
     - npm run test-report-generate
 
-pages:
-  stage: deploy
-  environment:
-    name: production
+compress-images:
+  stage: build
+  image:
+    name: funbox/optimizt:5.0.1
+    entrypoint: [""]
+  needs: [production-build]
+  script:
+    - find . -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif -o -iname \*.svg \) -exec optimizt {} +
+    - optimizt --avif .
+    - optimizt --webp .
+  artifacts:
+    paths:
+      - dist
+  only:
+    - main
+
+compress-files:
+  stage: build
+  needs: [compress-images]
   dependencies:
-    - unit-testing
-    - production-build
+    - compress-images
   before_script:
     - apt update -qy
     - apt upgrade -qy
     - apt install gzip brotli -qy
   script:
-    - mv dist/static public
-    - cd public
+    - cd dist
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k --best {} \; # gzip compress all files
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli -k {} \; #Brotli compress all files
+  artifacts:
+    paths:
+      - dist
+  only:
+    - main
+
+pages:
+  stage: deploy
+  environment:
+    name: production
+  needs: [compress-files]
+  dependencies:
+    - compress-files
+  before_script:
+    - apt update -qy
+    - apt upgrade -qy
+  script:
+    - mv dist/static public
   artifacts:
     paths:
       - public
