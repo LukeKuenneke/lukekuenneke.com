@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lukeKuennekeDotCom:build:production"
+              "buildTarget": "lukeKuennekeDotCom:build:production"
             },
             "development": {
-              "browserTarget": "lukeKuennekeDotCom:build:development"
+              "buildTarget": "lukeKuennekeDotCom:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lukeKuennekeDotCom:build"
+            "buildTarget": "lukeKuennekeDotCom:build"
           }
         },
         "test": {
