@@ -1,11 +1,11 @@
-image: node:20.15.0
+image: node:20.14.0
 
 # Helper method for angular dependencies
 .shared_hidden_key: &install-angular-dependencies # This is a YAML anchor
   before_script:
     - apt update -qy
     - apt upgrade -qy
-    - npm install
+    - npm install --force
 
 production-build:
   stage: build
@@ -28,7 +28,7 @@ unit-testing:
 compress-images:
   stage: build
   image:
-    name: funbox/optimizt:5.0.1
+    name: funbox/optimizt:5.0.2
     entrypoint: [""]
   needs: [production-build]
   script:
