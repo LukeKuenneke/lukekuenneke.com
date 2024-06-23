@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.0.5",
-    "@angular/cli": "^16.2.1",
+    "@angular/cli": "^17.3.8",
     "@angular/compiler-cli": "^18.0.4",
     "@scullyio/scully-plugin-puppeteer": "^2.1.41",
     "@types/jasmine": "^4.3.5",
