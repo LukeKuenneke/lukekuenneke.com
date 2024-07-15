@@ -28,7 +28,7 @@ unit-testing:
 compress-images:
   stage: build
   image:
-    name: funbox/optimizt:5.0.2
+    name: 343dev/optimizt:7.0.2
     entrypoint: [""]
   needs: [production-build]
   script:
