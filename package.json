@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "install-deps": "npm install --force",
+    "deps-install": "npm install --force",
     "serve": "node node_modules/@angular/cli/bin/ng.js serve lukeKuennekeDotCom",
     "build": "node node_modules/@angular/cli/bin/ng.js build lukeKuennekeDotCom",
     "postbuild": "npm run scully",
