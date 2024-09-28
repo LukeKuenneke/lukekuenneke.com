@@ -1,13 +1,12 @@
 @if (testimonialData) {
 <ngb-carousel [showNavigationIndicators]="false">
 	<ng-template ngbSlide *ngFor="let testimonial of testimonialData">
-		<div class="carousel-inner">
+		<div class="carousel-inner container-sm">
 			<div class="row">
 				<div class="col-2"></div>
 				<div class="col-8">
-					<p>{{testimonial.quote}}</p>
-					<br />
-					<p><i><b>{{testimonial.title}}</b></i></p>
+					<p class="text-start col-12">{{testimonial.quote}}</p>
+					<p class="text-end col-12"><i><b>{{testimonial.title}}</b></i></p>
 				</div>
 				<div class="col-2"></div>
 			</div>
