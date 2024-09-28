@@ -5,7 +5,9 @@
 			<div class="row">
 				<div class="col-2"></div>
 				<div class="col-8">
-					<p class="text-start col-12">{{testimonial.quote}}</p>
+					<div ng-template *ngFor="let quote of testimonial.quotes">
+						<p class="text-start col-12">{{quote}}</p>
+					</div>
 					<p class="text-end col-12"><i><b>{{testimonial.title}}</b></i></p>
 				</div>
 				<div class="col-2"></div>
