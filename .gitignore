@@ -115,3 +115,6 @@ scullyStats.json
 
 #GitLab CI Local
 .gitlab-ci-local
+
+# Misc
+.DS_Store
