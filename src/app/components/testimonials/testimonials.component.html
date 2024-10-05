@@ -8,7 +8,10 @@
 					<div ng-template *ngFor="let quote of testimonial.quotes">
 						<p class="text-start col-12">{{quote}}</p>
 					</div>
-					<p class="text-start col-12"><b>{{testimonial.title}}</b></p>
+					<br>
+					<div ng-template *ngFor="let roleTitle of testimonial.titles">
+						<p class="text-start col-12"><b>{{roleTitle}}</b></p>
+					</div>
 				</div>
 				<div class="col-2"></div>
 			</div>
