@@ -1,17 +1,28 @@
-image: node:20.17.0
+.image-nodejs: &image-nodejs
+  image: node:20.18.0
 
-# Helper method for angular dependencies
-.shared_hidden_key: &install-angular-dependencies # This is a YAML anchor
+.image-debian: &image-debian
+  image: library/debian:12.7-slim
   before_script:
     - apt update -qy
     - apt upgrade -qy
+
+.image-optimizt: &image-optimizt
+  image:
+    name: 343dev/optimizt:9.0.3
+    entrypoint: [""]
+
+.install-angular-dependencies: &install-angular-dependencies
+  before_script:
+    - apt update -qy
+    - apt upgrade -qy
+    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
     - npm install --force
 
 production-build:
   stage: build
-  <<: *install-angular-dependencies
+  <<: [*image-nodejs, *install-angular-dependencies]
   script:
-    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
     - npm run build
   artifacts:
     paths:
@@ -19,17 +30,14 @@ production-build:
 
 unit-testing:
   stage: test
+  <<: [*image-nodejs, *install-angular-dependencies]
   needs: []
-  <<: *install-angular-dependencies
   script:
-    - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
     - npm run test-report-generate
 
 compress-images:
   stage: build
-  image:
-    name: 343dev/optimizt:8.0.1
-    entrypoint: [""]
+  <<: [*image-optimizt]
   needs: [production-build]
   script:
     - find . -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif -o -iname \*.svg \) -exec optimizt {} +
@@ -43,14 +51,12 @@ compress-images:
 
 compress-files:
   stage: build
+  <<: [*image-debian]
   needs: [compress-images]
   dependencies:
     - compress-images
-  before_script:
-    - apt update -qy
-    - apt upgrade -qy
-    - apt install gzip brotli -qy
   script:
+    - apt install gzip brotli -qy
     - cd dist
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k --best {} \; # gzip compress all files
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli -k {} \; #Brotli compress all files
@@ -62,14 +68,12 @@ compress-files:
 
 pages:
   stage: deploy
+  <<: [*image-debian]
   environment:
     name: production
   needs: [compress-files]
   dependencies:
     - compress-files
-  before_script:
-    - apt update -qy
-    - apt upgrade -qy
   script:
     - mv dist/static public
   artifacts:
