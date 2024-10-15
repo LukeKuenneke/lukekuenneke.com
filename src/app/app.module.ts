@@ -50,7 +50,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
       useValue: (config: ImageLoaderConfig) => {
         if (environment.production) {
           const imageNoExt=config.src.split('.')[0];
-          const imageOptimizedExt = '.avif';
+          const imageOptimizedExt = 'avif';
 
           return  imageNoExt + "." + imageOptimizedExt;
         } else {
