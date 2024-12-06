@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgOptimizedImage, IMAGE_LOADER, ImageLoaderConfig } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,9 +41,24 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     NgxGoogleAnalyticsModule.forRoot('G-YP1CFCTRZK'),
     ScullyLibModule,
     NgbModule,
+    NgOptimizedImage,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: IMAGE_LOADER,
+      useValue: (config: ImageLoaderConfig) => {
+        if (environment.production) {
+          const imageNoExt=config.src.split('.')[0];
+          const imageOptimizedExt = 'avif';
+
+          return  imageNoExt + "." + imageOptimizedExt;
+        } else {
+          return config.src;
+        }
+      },
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
