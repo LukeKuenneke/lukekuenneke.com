@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
-import * as _ from "lodash";
+import { shuffle as ldShuffle } from 'lodash';
 
 import * as testimonialFile from '../../../assets/data/testimonials.json';
 
@@ -22,6 +22,6 @@ export class TestimonialsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.testimonialData = _.shuffle(this.testimonialData.testimonials);
+    this.testimonialData = ldShuffle(this.testimonialData.testimonials);
   }
 }
