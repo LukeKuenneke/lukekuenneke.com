@@ -1,5 +1,5 @@
 .image-nodejs: &image-nodejs
-  image: node:22.12.0
+  image: node:22.13.1
 
 .image-debian: &image-debian
   image: library/debian:12.8-slim
