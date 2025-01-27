@@ -7,10 +7,11 @@ import * as testimonialFile from '../../../assets/data/testimonials.json';
 
 
 @Component({
-  selector: 'app-testimonials',
-  templateUrl: './testimonials.component.html',
-  styleUrls: ['./testimonials.component.scss'],
-  providers: [NgbCarouselConfig]
+    selector: 'app-testimonials',
+    templateUrl: './testimonials.component.html',
+    styleUrls: ['./testimonials.component.scss'],
+    providers: [NgbCarouselConfig],
+    standalone: false
 })
 
 export class TestimonialsComponent implements OnInit {
