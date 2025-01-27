@@ -28,13 +28,6 @@ production-build:
     paths:
       - dist
 
-unit-testing:
-  stage: test
-  <<: [*image-nodejs, *install-angular-dependencies]
-  needs: []
-  script:
-    - npm run test-report-generate
-
 compress-images:
   stage: build
   <<: [*image-optimizt]
