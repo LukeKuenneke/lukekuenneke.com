@@ -68,7 +68,7 @@ pages:
   dependencies:
     - compress-files
   script:
-    - mv dist/browser public
+    - mv dist/lukekuenneke.com/browser public
   artifacts:
     paths:
       - public
