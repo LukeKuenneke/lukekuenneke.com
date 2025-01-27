@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { NgOptimizedImage, IMAGE_LOADER, ImageLoaderConfig } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -56,6 +56,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
         }
       },
     },
+    provideClientHydration(withEventReplay()),
   ],
   bootstrap: [AppComponent]
 })
