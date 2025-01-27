@@ -17,7 +17,7 @@
     - apt update -qy
     - apt upgrade -qy
     - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
-    - npm install --force
+    - npm install
 
 production-build:
   stage: build
@@ -75,7 +75,7 @@ pages:
   dependencies:
     - compress-files
   script:
-    - mv dist/static public
+    - mv dist/browser public
   artifacts:
     paths:
       - public

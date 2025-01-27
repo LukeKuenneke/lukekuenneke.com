@@ -9,7 +9,6 @@ import { environment } from '../environments/environment';
 
 // Third Party
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -39,7 +38,6 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
       registrationStrategy: 'registerWhenStable:30000'
     }),
     NgxGoogleAnalyticsModule.forRoot('G-YP1CFCTRZK'),
-    ScullyLibModule,
     NgbModule,
     NgOptimizedImage,
     FontAwesomeModule

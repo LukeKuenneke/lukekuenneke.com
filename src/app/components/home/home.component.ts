@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
-import { faTwitter, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
+import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
     selector: 'app-home',
@@ -11,7 +11,7 @@ import { faTwitter, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar }
 })
 export class HomeComponent implements OnInit {
   faFilePdf = faFilePdf;
-  faTwitter = faTwitter;
+  faBluesky = faBluesky;
   faLinkedin = faLinkedin;
   faGithub = faGithub;
   faGitlab = faGitlab;
