@@ -47,7 +47,15 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "."
-              ]
+              ],
+              "sass": {
+                "silenceDeprecations": [
+                  "mixed-decls",
+                  "color-functions",
+                  "global-builtin",
+                  "import"
+                ]
+              }
             },
             "server": "src/main.server.ts",
             "prerender": {
@@ -77,6 +85,13 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                }
+              },
               "outputHashing": "all"
             },
             "development": {
