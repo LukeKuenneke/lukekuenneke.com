@@ -1,15 +1,15 @@
 .image-nodejs: &image-nodejs
-  image: node:22.13.1
+  image: node:22.14.0
 
 .image-debian: &image-debian
-  image: library/debian:12.8-slim
+  image: library/debian:12-slim
   before_script:
     - apt update -qy
     - apt upgrade -qy
 
 .image-optimizt: &image-optimizt
   image:
-    name: 343dev/optimizt:10.0.0
+    name: 343dev/optimizt:latest
     entrypoint: [""]
 
 .install-angular-dependencies: &install-angular-dependencies
