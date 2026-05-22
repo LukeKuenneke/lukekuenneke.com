@@ -39,6 +39,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -50,7 +51,6 @@
               ],
               "sass": {
                 "silenceDeprecations": [
-                  "mixed-decls",
                   "color-functions",
                   "global-builtin",
                   "import"
