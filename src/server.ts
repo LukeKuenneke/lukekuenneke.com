@@ -9,8 +9,10 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
-const app = express();
 const commonEngine = new CommonEngine();
+
+let app = express();
+app.disable("x-powered-by");
 
 /**
  * Example Express Rest API endpoints can be defined here.
