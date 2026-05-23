@@ -1,22 +1,28 @@
-.social-icon {
+.social-icon,
+.about-name,
+.about-subject,
+.about-contact {
   color: white;
-  padding: 0.1em;
-  font-size: 6rem;
-  display: inline-block;
-}
-
-.about-name {
-  color: white;
-}
-
-.about-subject {
-  color: white;
+  font-size: clamp(01.5rem, 2.5vw, 2rem);
+  max-width: 100%;
 }
 
 .section-row-header {
   text-align: right;
 }
 
-.section-row-content-center {
-  text-align: center;
+.social-icon {
+  color: white;
+  font-size: clamp(5.5rem, 2.5vw, 2rem);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#Testimonials {
+  height: 700px;
+}
+
+.person-image .col-md-9 {
+  max-height: 45vmax;
+  max-width: 45vmax;
 }

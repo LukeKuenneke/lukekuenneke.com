@@ -2,63 +2,70 @@
   <app-header></app-header>
   <div class="container">
 
-    <section class="container">
-      <div class="row">
-        <img class="col-md-6 col-12 img-fluid img-square rounded mx-auto d-block"
-          ngSrc="assets/images/Luke-Kuenneke.png" width="1" height="1" alt="Luke Kuenneke">
+    <div class="row person-image-row">
+      <div class="col-md-3 d-none d-sm-none d-md-block section-row-header"></div>
+      <div class="col-xs-12 col-md-9 person-image">
+        <img ngSrc="assets/images/Luke-Kuenneke.png" width="1" height="1" alt="Luke Kuenneke"
+          class="col-md-9 col-12 img-fluid img-square rounded mx-auto w-100 h-100">
       </div>
-    </section>
+    </div>
 
     <br />
 
-    <section id="name" class="container">
+    <section id="Name" class="container">
       <h2 class="d-block d-sm-block d-md-none">Name</h2>
       <div class="row">
         <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
           <h2>Name</h2>
         </div>
         <div class="col-xs-12 col-md-9">
-          <p class="lead col-12 about-name">Luke Kuenneke</p>
+          <h1 class="lead col-12 about-name">Luke Kuenneke</h1>
         </div>
       </div>
     </section>
+
     <br />
-    <main>
-      <section id="about" class="container">
-        <h2 class="d-block d-sm-block d-md-none">About</h2>
-        <div class="row">
-          <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
-            <h2>About</h2>
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <p class="lead col-xl-12 about-subject">Technology Leadership & Management</p>
-            <p class="lead col-xl-12 about-subject">Software Engineering</p>
-            <p class="lead col-xl-12 about-subject">Cybersecurity</p>
-          </div>
+
+    <section id="Contact" class="container">
+      <h2 class="d-block d-sm-block d-md-none">Contact</h2>
+      <div class="row">
+        <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
+          <h2>Contact</h2>
         </div>
-      </section>
-      <!-- <br /> -->
-      <!-- <section id="Résumé" class="container">
-        <h2 class="d-sm-block d-md-none">Résumé</h2>
-        <div class="row">
-          <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
-            <h2>Résumé</h2>
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <a href="/resume" class="btn btn-success btn-lg d-block" target="_blank">View Résumé
-              <fa-icon [icon]="faFilePdf"></fa-icon>
-            </a>
-          </div>
+        <div class="col-xs-12 col-md-9">
+          <h3 class="about-"><a href="mailto:Hello@LukeKuenneke.com" target="_blank"
+              rel="noopener">Hello&#64;LukeKuenneke.com</a>
+          </h3>
         </div>
-      </section> -->
-      <!-- <br /> -->
-      <!-- <br /> -->
-      <section id="Links" class="container">
-        <h2 class="d-sm-block d-md-none">Links</h2>
-        <div class="row">
-          <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
-            <h2>Links</h2>
-          </div>
+      </div>
+    </section>
+
+    <br />
+
+    <section id="about" class="container">
+      <h2 class="d-block d-sm-block d-md-none">About</h2>
+      <div class="row">
+        <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
+          <h2>About</h2>
+        </div>
+        <div class="col-xs-12 col-md-9">
+          <p class="lead col-xl-12 about-subject">Technology Leadership & Management</p>
+          <p class="lead col-xl-12 about-subject">Software Engineering</p>
+          <p class="lead col-xl-12 about-subject">Cybersecurity</p>
+        </div>
+      </div>
+    </section>
+
+    <br />
+
+    <section id="Links" class="container">
+      <h2 class="d-sm-block d-md-none">Links</h2>
+      <div class="row">
+        <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
+          <h2>Links</h2>
+        </div>
+
+        <section class="col-md-3 text-left d-md-block section-row-header social-links">
           <div class="col-9 d-flex justify-content-between">
             <a class="btn btn-large" href="https://www.linkedin.com/in/luke-kuenneke" target="_blank" rel="noopener">
               <fa-icon [icon]="faLinkedin" class="social-icon fa-fw"></fa-icon>
@@ -71,8 +78,7 @@
             </a>
           </div>
 
-          <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
-          </div>
+          <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header"></div>
           <div class="col-9 d-flex justify-content-between">
             <a class="btn btn-large" href="https://scholar.google.com/citations?user=Mah4kwQAAAAJ&hl=en" target="_blank"
               rel="noopener">
@@ -86,41 +92,34 @@
               <fa-icon [icon]="faBluesky" class="social-icon fa-fw"></fa-icon>
             </a>
           </div>
-        </div>
-      </section>
-      <br />
+        </section>
+      </div>
+    </section>
 
-      <section id="Contact" class="container">
-        <h2 class="d-block d-sm-block d-md-none">Contact</h2>
-        <div class="row">
-          <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
-            <h2>Contact</h2>
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <h3><a href="mailto:Hello@LukeKuenneke.com" target="_blank" rel="noopener">Hello&#64;LukeKuenneke.com</a>
-            </h3>
-            <br />
-            <h3><a href="tel:1-513-223-3584" target="_blank" rel="noopener">513-223-3584</a></h3>
-            <div class="col-lg-2"></div>
-          </div>
+    <br />
+
+    <section id="Testimonials" class="container">
+      <h2 class="d-sm-block d-md-none">Testimonials</h2>
+      <div class="row">
+        <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
+          <h2>Testimonials</h2>
         </div>
-      </section>
-      <br />
-      <br />
-      <section id="Testimonials" class="container">
-        <h2 class="d-sm-block d-md-none">Testimonials</h2>
-        <div class="row">
-          <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
-            <h2>Testimonials</h2>
-          </div>
-          <div class="col-xs-12 col-md-9">
-            <app-testimonials></app-testimonials>
-          </div>
+        <div class="col-xs-12 col-md-9">
+
+          <br />
+
+          <app-testimonials></app-testimonials>
         </div>
-      </section>
-      <br />
-    </main>
+      </div>
+    </section>
+
+    <br />
+
   </div>
+
+
   <app-footer></app-footer>
+
   <br />
+
 </div>

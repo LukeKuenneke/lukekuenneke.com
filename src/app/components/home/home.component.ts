@@ -4,10 +4,10 @@ import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    standalone: false
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  standalone: false
 })
 export class HomeComponent implements OnInit {
   faFilePdf = faFilePdf;
@@ -17,10 +17,9 @@ export class HomeComponent implements OnInit {
   faGitlab = faGitlab;
   faCodepen = faCodepen;
   faGoogleScholar = faGoogleScholar;
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

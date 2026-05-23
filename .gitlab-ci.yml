@@ -1,8 +1,8 @@
 .image-nodejs: &image-nodejs
-  image: node:22.14.0
+  image: node:24.16.0
 
 .image-debian: &image-debian
-  image: library/debian:12-slim
+  image: library/debian:stable-slim
   before_script:
     - apt update -qy
     - apt upgrade -qy
