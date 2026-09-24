@@ -1,0 +1,57 @@
+:host {
+  display: block;
+}
+
+.testimonials-page {
+  min-height: 100vh;
+}
+
+.testimonials-page-content {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 4rem 2rem 7rem;
+}
+
+.page-intro {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
+  max-width: 48rem;
+  padding-bottom: 3rem;
+}
+
+.eyebrow {
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--ink);
+  font-family: var(--display-font);
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.05;
+  margin: 0;
+  max-width: 13ch;
+}
+
+.page-intro p:last-child {
+  color: var(--muted-ink);
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0;
+  max-width: 38rem;
+}
+
+@media (max-width: 38rem) {
+  .testimonials-page-content {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+}

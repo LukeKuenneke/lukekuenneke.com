@@ -1,125 +1,81 @@
-<div class="bg-dark text-light">
+<div class="site-shell">
   <app-header></app-header>
-  <div class="container">
 
-    <div class="row person-image-row">
-      <div class="col-md-3 d-none d-sm-none d-md-block section-row-header"></div>
-      <div class="col-xs-12 col-md-9 person-image">
-        <img ngSrc="assets/images/Luke-Kuenneke.png" width="1" height="1" alt="Luke Kuenneke"
-          class="col-md-9 col-12 img-fluid img-square rounded mx-auto w-100 h-100">
-      </div>
-    </div>
-
-    <br />
-
-    <section id="Name" class="container">
-      <h2 class="d-block d-sm-block d-md-none">Name</h2>
-      <div class="row">
-        <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
-          <h2>Name</h2>
-        </div>
-        <div class="col-xs-12 col-md-9">
-          <h1 class="lead col-12 about-name">Luke Kuenneke</h1>
-        </div>
-      </div>
-    </section>
-
-    <br />
-
-    <section id="Contact" class="container">
-      <h2 class="d-block d-sm-block d-md-none">Contact</h2>
-      <div class="row">
-        <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
-          <h2>Contact</h2>
-        </div>
-        <div class="col-xs-12 col-md-9">
-          <h1 class="about-contact"><a href="mailto:Hello@LukeKuenneke.com" target="_blank"
-              rel="noopener">Hello&#64;LukeKuenneke.com</a>
-          </h1>
-        </div>
-      </div>
-    </section>
-
-    <br />
-
-    <section id="about" class="container">
-      <h2 class="d-block d-sm-block d-md-none">About</h2>
-      <div class="row">
-        <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
-          <h2>About</h2>
-        </div>
-        <div class="col-xs-12 col-md-9">
-          <p class="lead col-xl-12 about-subject">Technology Leadership & Management</p>
-          <p class="lead col-xl-12 about-subject">Software Engineering</p>
-          <p class="lead col-xl-12 about-subject">Cybersecurity</p>
-        </div>
-      </div>
-    </section>
-
-    <br />
-
-    <section id="Links" class="container">
-      <h2 class="d-sm-block d-md-none">Links</h2>
-      <div class="row">
-        <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header">
-          <h2>Links</h2>
-        </div>
-
-        <section class="col-md-3 text-left d-md-block section-row-header social-links">
-          <div class="col-9 d-flex justify-content-between">
-            <a class="btn btn-large" href="https://www.linkedin.com/in/luke-kuenneke" target="_blank" rel="noopener">
-              <fa-icon [icon]="faLinkedin" class="social-icon fa-fw"></fa-icon>
-            </a>
-            <a class="btn btn-large" href="https://github.com/LukeKuenneke" target="_blank" rel="noopener">
-              <fa-icon [icon]="faGithub" class="social-icon fa-fw"></fa-icon>
-            </a>
-            <a class="btn btn-large" href="https://gitlab.com/LukeKuenneke" target="_blank" rel="noopener">
-              <fa-icon [icon]="faGitlab" class="social-icon fa-fw"></fa-icon>
-            </a>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">Luke Kuenneke</h1>
+          <p class="hero-summary">I help people turn complex technical systems into clear, resilient, and useful products.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:Hello@LukeKuenneke.com">Start a conversation</a>
+            </div>
+            <br>
+            <div class="hero-actions">
+            <a class="button button-secondary" href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
+            <a class="button button-secondary"routerLink="/testimonials">Testimonials</a>
           </div>
+        </div>
 
-          <div class="col-md-3 text-right d-none d-sm-none d-md-block section-row-header"></div>
-          <div class="col-9 d-flex justify-content-between">
-            <a class="btn btn-large" href="https://scholar.google.com/citations?user=Mah4kwQAAAAJ&hl=en" target="_blank"
-              rel="noopener">
-              <fa-icon [icon]="faGoogleScholar" class="social-icon fa-fw"></fa-icon>
-            </a>
-            <a class="btn btn-large" href="https://codepen.io/LukeKuenneke" target="_blank" rel="noopener">
-              <fa-icon [icon]="faCodepen" class="social-icon fa-fw"></fa-icon>
-            </a>
-            <a class="btn btn-large" href="https://bsky.app/profile/lukekuenneke.bsky.social" target="_blank"
-              rel="noopener">
-              <fa-icon [icon]="faBluesky" class="social-icon fa-fw"></fa-icon>
-            </a>
-          </div>
-        </section>
+        <figure class="hero-portrait">
+          <img ngSrc="assets/images/Luke-Kuenneke.png" width="1683" height="2355" priority
+            alt="Portrait of Luke Kuenneke">
+        </figure>
       </div>
     </section>
 
-    <br />
+    <section class="content-section" id="about" aria-labelledby="focus-title">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+      </div>
 
-    <section id="Testimonials" class="container">
-      <h2 class="d-sm-block d-md-none">Testimonials</h2>
-      <div class="row">
-        <div class="col-md-3 d-none d-sm-none d-md-block section-row-header">
-          <h2>Testimonials</h2>
-        </div>
-        <div class="col-xs-12 col-md-9">
-
-          <br />
-
-          <app-testimonials></app-testimonials>
-        </div>
+      <div class="capability-list">
+        <article class="capability">
+          <span class="capability-number">01</span>
+          <h3>Leadership & Management</h3>
+          <p>Connecting strategy, people, architecture, and execution to move organizations through growth, change, and complex delivery.</p>
+        </article>
+        <article class="capability">
+          <span class="capability-number">02</span>
+          <h3>Proactive Agility</h3>
+          <p>Stepping into difficult technical environments, finding the path forward quickly, and delivering solutions that customers and stakeholders can trust.</p>
+        </article>
+        <article class="capability">
+          <span class="capability-number">03</span>
+          <h3>Investing in Tomorrow</h3>
+          <p>Building inclusive, accountable teams through clear communication, thoughtful mentorship, and the technical credibility to make hard decisions well.</p>
+        </article>
       </div>
     </section>
 
-    <br />
+    <section class="content-section connection-section" id="connect" aria-labelledby="connect-title">
+      <div class="section-heading">
+        <p class="eyebrow">Links</p>
+        <h2 id="connect-title"></h2>
+      </div>
 
-  </div>
+      <nav aria-label="Social profiles">
+        <ul class="social-links">
+          @for (socialLink of socialLinks; track socialLink.url) {
+            <li>
+              <a class="social-link" [href]="socialLink.url" [attr.aria-label]="socialLink.label" target="_blank"
+                rel="noopener noreferrer">
+                <fa-icon [icon]="socialLink.icon" aria-hidden="true"></fa-icon>
+                <span>{{ socialLink.label }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </section>
 
+    <section class="content-section testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="section-heading">
+        <p class="eyebrow">Experiences working with Luke</p>
+      </div>
+      <app-testimonials></app-testimonials>
+    </section>
+  </main>
 
   <app-footer></app-footer>
-
-  <br />
-
 </div>

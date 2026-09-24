@@ -1,18 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss'],
-    standalone: false
+    styleUrl: './footer.component.scss'
 })
-export class FooterComponent implements OnInit {
-  public currentYear: number;
-
-  constructor() {
-    this.currentYear = new Date().getFullYear();
-  }
-
-  ngOnInit(): void {
-  }
+export class FooterComponent {
+  readonly currentYear = new Date().getFullYear();
 }

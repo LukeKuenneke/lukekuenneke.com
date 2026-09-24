@@ -2,19 +2,24 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
 const process = require('process');
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+const { execFileSync } = require('child_process');
+
+process.env.CHROME_BIN = execFileSync(
+  process.execPath,
+  ['-e', "require('puppeteer').executablePath().then(path => process.stdout.write(path))"],
+  { encoding: 'utf8' }
+).trim();
 
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine'],
     plugins: [
       require('karma-spec-reporter'),
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('karma-coverage')
     ],
     client: {
       jasmine: {
@@ -42,27 +47,24 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
     browsers: ['ChromeTesting'],
     customLaunchers: {
       ChromeTesting: {
         base: 'Chrome',
         flags: [
           '--no-sandbox',
-          '--user-data-dir',
           '--disable-translate',
           '--disable-extensions',
           '--disable-setuid-sandbox',
           '--no-proxy-server',
           '--enable-logging',
-          '--remote-debugging-address=0.0.0.0',
-          '--remote-debugging-port=9876',
           '--headless',
           '--disable-gpu'
         ]
       }
     },
-    singleRun: false,
-    restartOnFileChange: true
+    singleRun: true,
+    restartOnFileChange: false
   });
 };

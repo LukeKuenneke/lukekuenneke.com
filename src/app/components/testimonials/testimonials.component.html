@@ -1,23 +1,24 @@
-@if (testimonialData) {
-<ngb-carousel [showNavigationIndicators]="false" [animation]="true" class="testimonial-carousel">
-	<ng-template ngbSlide *ngFor="let testimonial of testimonialData">
-		<div class="carousel-inner">
-			<div class="row">
-				<div class="col-2"></div>
-				<div class="col-8">
-					<div ng-template *ngFor="let quote of testimonial.quotes">
-						<p class="text-start col-12">{{quote}}</p>
-					</div>
-
-					<br/>
-					
-					<div ng-template *ngFor="let roleTitle of testimonial.titles">
-						<p class="text-start col-12"><b>{{roleTitle}}</b></p>
-					</div>
-				</div>
-				<div class="col-2"></div>
-			</div>
-		</div>
-	</ng-template>
-</ngb-carousel>
+@if (testimonialData.length) {
+  <div class="testimonial-panel">
+    <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="true" [animation]="true"
+      [interval]="10000" [pauseOnHover]="true" [pauseOnFocus]="true" class="testimonial-carousel"
+      aria-label="Professional testimonials">
+      @for (testimonial of testimonialData; track $index) {
+        <ng-template ngbSlide>
+          <blockquote>
+            <div class="quote-list">
+              @for (quote of testimonial.quotes; track quote) {
+                <p>{{ quote }}</p>
+              }
+            </div>
+            <footer>
+              @for (roleTitle of testimonial.titles; track roleTitle) {
+                <cite>{{ roleTitle }}</cite>
+              }
+            </footer>
+          </blockquote>
+        </ng-template>
+      }
+    </ngb-carousel>
+  </div>
 }

@@ -1,0 +1,75 @@
+:host {
+  background: var(--forest);
+  display: block;
+}
+
+.site-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 1.5rem 2rem;
+}
+
+.wordmark,
+.site-header nav {
+  align-items: center;
+  display: flex;
+}
+
+.wordmark {
+  color: var(--paper);
+  font-family: var(--display-font);
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.wordmark-mark {
+  align-items: center;
+  background: var(--accent);
+  border-radius: 50%;
+  color: var(--paper);
+  display: inline-flex;
+  font-family: var(--body-font);
+  font-size: 0.7rem;
+  height: 2rem;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  width: 2rem;
+}
+
+.site-header nav {
+  gap: 1.25rem;
+}
+
+.site-header nav a {
+  color: rgba(243, 246, 237, 0.78);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible,
+.wordmark:hover,
+.wordmark:focus-visible {
+  color: var(--accent-light);
+}
+
+@media (max-width: 38rem) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .site-header nav {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+}

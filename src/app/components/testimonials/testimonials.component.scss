@@ -1,0 +1,77 @@
+.testimonial-panel {
+  background: var(--ink);
+  border-radius: 1.25rem;
+  color: var(--paper);
+  overflow: hidden;
+}
+
+.testimonial-carousel {
+  min-height: 18rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 3rem 4rem 4.5rem;
+}
+
+.quote-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.quote-list p {
+  color: rgba(255, 252, 246, 0.88);
+  font-family: var(--display-font);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+blockquote footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 2rem;
+}
+
+blockquote cite {
+  color: var(--accent-light);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+::ng-deep .testimonial-carousel .carousel-control-prev,
+::ng-deep .testimonial-carousel .carousel-control-next {
+  align-items: flex-end;
+  bottom: 1.25rem;
+  height: 2rem;
+  opacity: 1;
+  top: auto;
+  width: 2rem;
+}
+
+::ng-deep .testimonial-carousel .carousel-control-prev {
+  left: auto;
+  right: 4.5rem;
+}
+
+::ng-deep .testimonial-carousel .carousel-control-next {
+  right: 1.5rem;
+}
+
+@media (max-width: 38rem) {
+  blockquote {
+    padding: 2rem 1.5rem 4.5rem;
+  }
+
+  .quote-list p {
+    font-size: 1rem;
+  }
+
+  ::ng-deep .testimonial-carousel .carousel-control-prev {
+    right: 4rem;
+  }
+}

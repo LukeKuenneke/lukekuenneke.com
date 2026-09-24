@@ -1,7 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
-.fallback-background {
-    height: 100%;
-    width: 100%;
-    background-color: pink !important;
+:root {
+  --paper: #f3f6ed;
+  --paper-deep: #dce8d5;
+  --ink: #173b31;
+  --muted-ink: #587066;
+  --line: rgba(23, 59, 49, 0.18);
+  --forest: #173b31;
+  --forest-deep: #0d2b24;
+  --fern: #3f7658;
+  --accent: #c7983d;
+  --accent-dark: #8c651f;
+  --accent-light: #e5c779;
+  --display-font: "Georgia", "Times New Roman", serif;
+  --body-font: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 85% 5%, rgba(63, 118, 88, 0.14), transparent 24rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--body-font);
+  line-height: 1.6;
+  margin: 0;
+}
+
+body,
+button,
+a {
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
