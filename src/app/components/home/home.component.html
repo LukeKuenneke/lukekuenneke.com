@@ -1,7 +1,8 @@
 <div class="site-shell">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <app-header></app-header>
 
-  <main>
+  <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -24,9 +25,10 @@
       </div>
     </section>
 
-    <section class="content-section" id="about" aria-labelledby="focus-title">
+    <section class="content-section" id="about" aria-labelledby="about-title">
       <div class="section-heading">
         <p class="eyebrow">About</p>
+        <h2 id="about-title">About Luke</h2>
       </div>
 
       <div class="capability-list">
@@ -51,7 +53,7 @@
     <section class="content-section connection-section" id="connect" aria-labelledby="connect-title">
       <div class="section-heading">
         <p class="eyebrow">Links</p>
-        <h2 id="connect-title"></h2>
+        <h2 id="connect-title">Connect</h2>
       </div>
 
       <nav aria-label="Social profiles">
@@ -72,6 +74,7 @@
     <section class="content-section testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
       <div class="section-heading">
         <p class="eyebrow">Experiences working with Luke</p>
+        <h2 id="testimonials-title">Testimonials</h2>
       </div>
       <app-testimonials></app-testimonials>
     </section>

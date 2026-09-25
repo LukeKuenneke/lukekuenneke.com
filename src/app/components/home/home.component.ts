@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
+import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar, faImdb } from '@fortawesome/free-brands-svg-icons';
 
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -45,6 +45,7 @@ export class HomeComponent {
     { label: 'GitLab', url: 'https://gitlab.com/LukeKuenneke', icon: faGitlab },
     { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=Mah4kwQAAAAJ&hl=en', icon: faGoogleScholar },
     { label: 'CodePen', url: 'https://codepen.io/LukeKuenneke', icon: faCodepen },
+    { label: 'IMDb', url: 'https://www.imdb.com/name/nm4111022/', icon: faImdb },
     { label: 'Bluesky', url: 'https://bsky.app/profile/lukekuenneke.bsky.social', icon: faBluesky }
   ];
 }

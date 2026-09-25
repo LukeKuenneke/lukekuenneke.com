@@ -7,9 +7,9 @@
   --forest: #173b31;
   --forest-deep: #0d2b24;
   --fern: #3f7658;
-  --accent: #c7983d;
-  --accent-dark: #8c651f;
-  --accent-light: #e5c779;
+  --accent: #b86a4d;
+  --accent-dark: #7e412b;
+  --accent-light: #d89a7b;
   --display-font: "Georgia", "Times New Roman", serif;
   --body-font: "Avenir Next", "Segoe UI", sans-serif;
 }
@@ -42,6 +42,20 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+.skip-link {
+  background: var(--forest);
+  color: var(--paper);
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  transform: translateY(-200%);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 a:focus-visible,
