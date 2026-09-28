@@ -16,8 +16,8 @@
         </blockquote>
       }
     } @else {
-      <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="true" [animation]="true"
-        [interval]="10000" [pauseOnHover]="true" [pauseOnFocus]="true" class="testimonial-carousel"
+      <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="true" [animation]="false"
+        [interval]="0" [pauseOnHover]="true" [pauseOnFocus]="true" class="testimonial-carousel"
         aria-label="Professional testimonials">
         @for (testimonial of testimonialData; track $index) {
           <ng-template ngbSlide>

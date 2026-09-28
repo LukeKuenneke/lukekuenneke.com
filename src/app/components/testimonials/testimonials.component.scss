@@ -9,6 +9,10 @@
   min-height: 18rem;
 }
 
+::ng-deep .testimonial-carousel .carousel-indicators {
+  display: none;
+}
+
 .testimonial-list {
   background: var(--ink);
   border-radius: 1.25rem;

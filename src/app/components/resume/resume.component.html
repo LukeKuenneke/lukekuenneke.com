@@ -2,7 +2,9 @@
   <div class="resume-redirect-card">
     <p class="eyebrow">Résumé</p>
     <h1 id="resume-redirect-title">Opening the full résumé.</h1>
-    <p>You are being redirected to the current résumé document.</p>
-    <a class="resume-fallback" [href]="resumeUrl">Continue to résumé <span aria-hidden="true">↗</span></a>
+    <p>The current résumé is available as an external document.</p>
+    <a class="resume-fallback" [href]="resumeUrl" target="_blank" rel="noopener noreferrer">
+      Continue to résumé <span>(opens in a new tab)</span>
+    </a>
   </div>
 </main>

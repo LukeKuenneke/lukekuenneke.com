@@ -10,11 +10,8 @@
           <p class="hero-summary">I help people turn complex technical systems into clear, resilient, and useful products.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="mailto:Hello@LukeKuenneke.com">Start a conversation</a>
-            </div>
-            <br>
-            <div class="hero-actions">
-            <a class="button button-secondary" href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
-            <a class="button button-secondary"routerLink="/testimonials">Testimonials</a>
+            <a class="button button-secondary" href="/resume">Résumé</a>
+            <a class="button button-secondary" routerLink="/testimonials">Testimonials</a>
           </div>
         </div>
 
@@ -27,8 +24,7 @@
 
     <section class="content-section" id="about" aria-labelledby="about-title">
       <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">About Luke</h2>
+        <h2 id="about-title">About</h2>
       </div>
 
       <div class="capability-list">
@@ -52,15 +48,14 @@
 
     <section class="content-section connection-section" id="connect" aria-labelledby="connect-title">
       <div class="section-heading">
-        <p class="eyebrow">Links</p>
-        <h2 id="connect-title">Connect</h2>
+        <h2 id="connect-title">Links</h2>
       </div>
 
       <nav aria-label="Social profiles">
         <ul class="social-links">
           @for (socialLink of socialLinks; track socialLink.url) {
             <li>
-              <a class="social-link" [href]="socialLink.url" [attr.aria-label]="socialLink.label" target="_blank"
+              <a class="social-link" [href]="socialLink.url" [attr.aria-label]="socialLink.label + ' (opens in a new tab)'" target="_blank"
                 rel="noopener noreferrer">
                 <fa-icon [icon]="socialLink.icon" aria-hidden="true"></fa-icon>
                 <span>{{ socialLink.label }}</span>
@@ -73,7 +68,6 @@
 
     <section class="content-section testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
       <div class="section-heading">
-        <p class="eyebrow">Experiences working with Luke</p>
         <h2 id="testimonials-title">Testimonials</h2>
       </div>
       <app-testimonials></app-testimonials>

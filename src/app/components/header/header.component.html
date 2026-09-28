@@ -5,8 +5,9 @@
     </a>
 
     <nav aria-label="Primary navigation">
-        <a routerLink="/">About</a>
-        <a routerLink="/testimonials">Testimonials</a>
-        <a href="/resume" target="_blank" rel="noopener noreferrer">Résumé</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page">About</a>
+        <a routerLink="/testimonials" routerLinkActive="active" ariaCurrentWhenActive="page">Testimonials</a>
+        <a href="/resume">Résumé</a>
     </nav>
 </header>

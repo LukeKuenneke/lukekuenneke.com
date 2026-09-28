@@ -17,7 +17,7 @@ export class TestimonialsComponent implements OnInit {
   testimonialData: Testimonial[] = (testimonialFile as TestimonialData).testimonials;
 
   constructor(config: NgbCarouselConfig) {
-    config.interval = 10000;
+    config.interval = 0;
     config.animation = false;
   }
 
