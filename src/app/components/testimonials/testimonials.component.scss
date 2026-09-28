@@ -10,27 +10,24 @@
 }
 
 .testimonial-list {
-  background: transparent;
-  border-radius: 0;
-  color: var(--ink);
-  overflow: visible;
+  background: var(--ink);
+  border-radius: 1.25rem;
+  color: var(--paper);
+  overflow: hidden;
 }
 
 .testimonial-list blockquote {
-  border-bottom: 1px solid var(--line);
-  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 252, 246, 0.18);
+  padding: 2.5rem 4rem;
 }
 
 .testimonial-list blockquote:first-child {
-  padding-top: 0;
+  padding-top: 3rem;
 }
 
-.testimonial-list .quote-list p {
-  color: var(--muted-ink);
-}
-
-.testimonial-list blockquote cite {
-  color: var(--accent-dark);
+.testimonial-list blockquote:last-child {
+  border-bottom: 0;
+  padding-bottom: 3rem;
 }
 
 blockquote {
@@ -93,6 +90,18 @@ blockquote cite {
 
   .quote-list p {
     font-size: 1rem;
+  }
+
+  .testimonial-list blockquote {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonial-list blockquote:first-child {
+    padding-top: 2rem;
+  }
+
+  .testimonial-list blockquote:last-child {
+    padding-bottom: 2rem;
   }
 
   ::ng-deep .testimonial-carousel .carousel-control-prev {
