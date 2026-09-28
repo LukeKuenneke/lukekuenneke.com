@@ -9,6 +9,30 @@
   min-height: 18rem;
 }
 
+.testimonial-list {
+  background: transparent;
+  border-radius: 0;
+  color: var(--ink);
+  overflow: visible;
+}
+
+.testimonial-list blockquote {
+  border-bottom: 1px solid var(--line);
+  padding: 2rem 0;
+}
+
+.testimonial-list blockquote:first-child {
+  padding-top: 0;
+}
+
+.testimonial-list .quote-list p {
+  color: var(--muted-ink);
+}
+
+.testimonial-list blockquote cite {
+  color: var(--accent-dark);
+}
+
 blockquote {
   margin: 0;
   padding: 3rem 4rem 4.5rem;

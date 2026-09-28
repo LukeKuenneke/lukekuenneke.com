@@ -1,24 +1,41 @@
 @if (testimonialData.length) {
-  <div class="testimonial-panel">
-    <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="true" [animation]="true"
-      [interval]="10000" [pauseOnHover]="true" [pauseOnFocus]="true" class="testimonial-carousel"
-      aria-label="Professional testimonials">
+  <div class="testimonial-panel" [class.testimonial-list]="listView">
+    @if (listView) {
       @for (testimonial of testimonialData; track $index) {
-        <ng-template ngbSlide>
-          <blockquote>
-            <div class="quote-list">
-              @for (quote of testimonial.quotes; track quote) {
-                <p>{{ quote }}</p>
-              }
-            </div>
-            <footer>
-              @for (roleTitle of testimonial.titles; track roleTitle) {
-                <cite>{{ roleTitle }}</cite>
-              }
-            </footer>
-          </blockquote>
-        </ng-template>
+        <blockquote>
+          <div class="quote-list">
+            @for (quote of testimonial.quotes; track quote) {
+              <p>{{ quote }}</p>
+            }
+          </div>
+          <footer>
+            @for (roleTitle of testimonial.titles; track roleTitle) {
+              <cite>{{ roleTitle }}</cite>
+            }
+          </footer>
+        </blockquote>
       }
-    </ngb-carousel>
+    } @else {
+      <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="true" [animation]="true"
+        [interval]="10000" [pauseOnHover]="true" [pauseOnFocus]="true" class="testimonial-carousel"
+        aria-label="Professional testimonials">
+        @for (testimonial of testimonialData; track $index) {
+          <ng-template ngbSlide>
+            <blockquote>
+              <div class="quote-list">
+                @for (quote of testimonial.quotes; track quote) {
+                  <p>{{ quote }}</p>
+                }
+              </div>
+              <footer>
+                @for (roleTitle of testimonial.titles; track roleTitle) {
+                  <cite>{{ roleTitle }}</cite>
+                }
+              </footer>
+            </blockquote>
+          </ng-template>
+        }
+      </ngb-carousel>
+    }
   </div>
 }

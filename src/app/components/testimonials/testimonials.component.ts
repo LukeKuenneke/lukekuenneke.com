@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import testimonialFile from '../../../assets/data/testimonials.json';
 import { Testimonial, TestimonialData } from './testimonial.model';
@@ -12,15 +12,19 @@ import { Testimonial, TestimonialData } from './testimonial.model';
     providers: [NgbCarouselConfig]
 })
 
-export class TestimonialsComponent {
-  testimonialData: Testimonial[];
+export class TestimonialsComponent implements OnInit {
+  @Input() listView = false;
+  testimonialData: Testimonial[] = (testimonialFile as TestimonialData).testimonials;
 
   constructor(config: NgbCarouselConfig) {
     config.interval = 10000;
     config.animation = false;
-    this.testimonialData = shuffleTestimonials(
-      (testimonialFile as TestimonialData).testimonials
-    );
+  }
+
+  ngOnInit(): void {
+    if (!this.listView) {
+      this.testimonialData = shuffleTestimonials(this.testimonialData);
+    }
   }
 }
 
