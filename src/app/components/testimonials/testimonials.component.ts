@@ -28,11 +28,21 @@ export class TestimonialsComponent implements OnInit {
   }
 }
 
+function secureRandomInt(maxExclusive: number): number {
+  if (!Number.isInteger(maxExclusive) || maxExclusive <= 0) {
+    return 0;
+  }
+
+  const randomValue = new Uint32Array(1);
+  crypto.getRandomValues(randomValue);
+  return randomValue[0] % maxExclusive;
+}
+
 function shuffleTestimonials(testimonials: Testimonial[]): Testimonial[] {
   const shuffled = [...testimonials];
 
   for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
+    const randomIndex = secureRandomInt(index + 1);
     [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
   }
 

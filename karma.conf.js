@@ -1,8 +1,8 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
-const process = require('process');
-const { execFileSync } = require('child_process');
+const process = require('node:process');
+const { execFileSync } = require('node:child_process');
 
 process.env.CHROME_BIN = execFileSync(
   process.execPath,
@@ -10,7 +10,7 @@ process.env.CHROME_BIN = execFileSync(
   { encoding: 'utf8' }
 ).trim();
 
-module.exports = function (config) {
+module.exports = function configureKarma(config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -34,7 +34,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/jill-sphere-jamboree-herd'),
+      dir: require('node:path').join(__dirname, './coverage/jill-sphere-jamboree-herd'),
       subdir: '.',
       reporters: [
         { type: 'kjhtml' },
