@@ -11,7 +11,7 @@ export interface SeoPage {
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly siteName = 'Luke Kuenneke';
-  private readonly siteUrl = 'https://lukekuenneke.com';
+  private readonly siteUrl = 'https://www.lukekuenneke.com';
 
   constructor(
     private readonly title: Title,
@@ -31,11 +31,16 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:title', content: fullTitle });
     this.meta.updateTag({ name: 'twitter:description', content: page.description });
 
-    let canonical = this.document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const head = this.document.head;
+    if (!head) {
+      return;
+    }
+
+    let canonical = head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
       canonical = this.document.createElement('link');
       canonical.rel = 'canonical';
-      this.document.head.appendChild(canonical);
+      head.appendChild(canonical);
     }
     canonical.href = canonicalUrl;
   }
