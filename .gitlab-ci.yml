@@ -23,7 +23,6 @@ production-build:
   stage: build
   <<: [*image-nodejs, *install-angular-dependencies]
   script:
-    - npm run test-report-generate
     - npm run build
   artifacts:
     paths:
