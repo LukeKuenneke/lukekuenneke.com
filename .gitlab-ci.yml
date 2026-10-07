@@ -17,12 +17,13 @@
     - apt update -qy
     - apt upgrade -qy
     - apt install libnss3-dev libatk1.0-dev libatk-bridge2.0-dev libcups2-dev libcups2 libdrm-dev libxkbcommon-dev libxcomposite-dev libxdamage-dev libxrandr-dev libgbm-dev libasound2-dev -qy
-    - npm install
+    - npm ci
 
 production-build:
   stage: build
   <<: [*image-nodejs, *install-angular-dependencies]
   script:
+    - npm run test-report-generate
     - npm run build
   artifacts:
     paths:
@@ -68,6 +69,7 @@ pages:
   dependencies:
     - compress-files
   script:
+    - cp dist/lukekuenneke.com/browser/404/index.html dist/lukekuenneke.com/browser/404.html
     - mv dist/lukekuenneke.com/browser public
   artifacts:
     paths:
