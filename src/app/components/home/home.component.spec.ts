@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HomeComponent } from './home.component';
@@ -22,7 +21,6 @@ describe('HomeComponent', () => {
         TestimonialsComponent,
         NgOptimizedImage,
         RouterTestingModule,
-        NgbModule,
         FontAwesomeModule
       ]
     })

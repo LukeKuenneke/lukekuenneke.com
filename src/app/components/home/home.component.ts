@@ -33,8 +33,8 @@ interface SocialLink {
 export class HomeComponent {
   constructor(seo: SeoService) {
     seo.update({
-      title: 'Technology Leadership and Consulting',
-      description: 'Luke Kuenneke is a technology executive and freelance consultant specializing in strategy, software engineering, cybersecurity, and resilient systems.',
+      title: 'Technology Strategist & Builder',
+      description: 'Luke Kuenneke is a technology strategist and builder who scales engineering organizations, untangles complex cloud-native and distributed architectures, and ships production-critical software.',
       path: '/'
     });
   }

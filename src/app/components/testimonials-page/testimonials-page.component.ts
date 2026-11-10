@@ -14,8 +14,8 @@ import { SeoService } from '../../seo.service';
 export class TestimonialsPageComponent {
   constructor(seo: SeoService) {
     seo.update({
-      title: 'Professional Testimonials',
-      description: 'Read recommendations from colleagues, leaders, and collaborators about working with Luke Kuenneke.',
+      title: 'Leadership & Peer Testimonials',
+      description: 'Unfiltered recommendations from the people I\'ve built and shipped with.',
       path: '/testimonials'
     });
   }

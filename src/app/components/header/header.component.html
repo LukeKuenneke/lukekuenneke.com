@@ -1,13 +1,17 @@
 <header class="site-header">
-    <a class="wordmark" routerLink="/" aria-label="Luke Kuenneke home">
-        <span class="wordmark-mark" aria-hidden="true">LK</span>
-        <span>Luke Kuenneke</span>
-    </a>
+  <a class="wordmark" routerLink="/" aria-label="Luke Kuenneke home">
+    <span class="wordmark-mark" aria-hidden="true">LK</span>
+    <span class="wordmark-text">
+      <span class="wordmark-name">Luke Kuenneke</span>
+      <span class="wordmark-role">Technology Strategist &amp; Builder</span>
+    </span>
+  </a>
 
-    <nav aria-label="Primary navigation">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">About</a>
-        <a routerLink="/testimonials" routerLinkActive="active" ariaCurrentWhenActive="page">Testimonials</a>
-        <a href="/resume">Résumé</a>
-    </nav>
+  <nav aria-label="Primary navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page">Overview</a>
+    <a routerLink="/testimonials" routerLinkActive="active" ariaCurrentWhenActive="page">Testimonials</a>
+    <a routerLink="/resume" routerLinkActive="active" ariaCurrentWhenActive="page">Résumé</a>
+    <a class="header-cta" href="mailto:Hello@LukeKuenneke.com">Get in touch</a>
+  </nav>
 </header>

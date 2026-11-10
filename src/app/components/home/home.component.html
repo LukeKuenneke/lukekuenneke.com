@@ -7,12 +7,31 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <h1 id="hero-title">Luke Kuenneke</h1>
-          <p class="hero-summary">I help people turn complex technical systems into clear, resilient, and useful products.</p>
+          <p class="hero-summary">
+            Projects fail when strategy, architecture, and the people actualizing the goal drift apart.
+            I bring them back into alignment, untangling complex systems, and leading high-trust
+            teams that ship when the stakes are high.
+          </p>
           <div class="hero-actions">
             <a class="button button-primary" href="mailto:Hello@LukeKuenneke.com">Start a conversation</a>
-            <a class="button button-secondary" href="/resume">Résumé</a>
+            <a class="button button-secondary" routerLink="/resume">Full Résumé</a>
             <a class="button button-secondary" routerLink="/testimonials">Testimonials</a>
           </div>
+
+          <dl class="hero-metrics" aria-label="Core principles">
+            <div class="metric-item">
+              <dt>Strategy</dt>
+              <dd>Clarity from ambiguity</dd>
+            </div>
+            <div class="metric-item">
+              <dt>Architecture</dt>
+              <dd>Solutions built to endure</dd>
+            </div>
+            <div class="metric-item">
+              <dt>Leadership</dt>
+              <dd>High-trust teams that ship</dd>
+            </div>
+          </dl>
         </div>
 
         <figure class="hero-portrait">
@@ -24,53 +43,115 @@
 
     <section class="content-section" id="about" aria-labelledby="about-title">
       <div class="section-heading">
-        <h2 id="about-title">About</h2>
+        <div>
+          <p class="eyebrow">Where I Drive Impact</p>
+          <h2 id="about-title">Built for Hard Problems</h2>
+          <p class="section-lead">
+            Great technology strategy has to survive production. When a roadmap is stalled or an architecture hits its
+            ceiling, I find the path forward and get teams moving.
+          </p>
+        </div>
+        <div class="section-action">
+          <p class="eyebrow">Reputation</p>
+          <h2 id="testimonials-title">Leadership &amp; Engineering Testimonials</h2>
+          <p class="section-lead">
+            Recommendations from the people I've built and shipped with.
+          </p>
+          <a class="button button-outline section-action" routerLink="/testimonials">
+            Read all testimonials &rarr;
+          </a>
+        </div>
       </div>
 
-      <div class="capability-list">
-        <article class="capability">
-          <span class="capability-number">01</span>
-          <h3>Leadership & Management</h3>
-          <p>Connecting strategy, people, architecture, and execution to move organizations through growth, change, and complex delivery.</p>
+      <div class="bento-capabilities">
+        <article class="bento-card">
+          <span class="capability-number">Strategy &amp; Command</span>
+          <h3>Command &amp; Execution</h3>
+          <p>I unite engineering organizations, C-suite leadership, program directors, and stakeholders behind a clear
+            technical direction. Shaping winning proposals, setting architectural standards, and turning ambitious
+            roadmaps into working software.</p>
+          <div class="card-tags">
+            <span class="tag-chip">Organizational Leadership</span>
+            <span class="tag-chip">Winning Proposals</span>
+            <span class="tag-chip">Stakeholder Alignment</span>
+          </div>
         </article>
-        <article class="capability">
-          <span class="capability-number">02</span>
-          <h3>Proactive Agility</h3>
-          <p>Stepping into difficult technical environments, finding the path forward quickly, and delivering solutions that customers and stakeholders can trust.</p>
+
+        <article class="bento-card">
+          <span class="capability-number">Systems &amp; Turnarounds</span>
+          <h3>High-Stakes Turnarounds</h3>
+          <p>When a critical risk appears, production is failing, or a team is buried in friction, I step in restoring
+            delivery momentum and isolating the root problem.</p>
+          <div class="card-tags">
+            <span class="tag-chip">Cloud Native</span>
+            <span class="tag-chip">DevSecOps</span>
+            <span class="tag-chip">Proactive Agility</span>
+          </div>
         </article>
-        <article class="capability">
-          <span class="capability-number">03</span>
-          <h3>Investing in Tomorrow</h3>
-          <p>Building inclusive, accountable teams through clear communication, thoughtful mentorship, and the technical credibility to make hard decisions well.</p>
+
+        <article class="bento-card">
+          <span class="capability-number">Culture &amp; Craft</span>
+          <h3>Force-Multiplier Culture</h3>
+          <p>Great engineers stay where standards are high, leadership has their back, and they can continue to evolve
+            the craft. I build low-ego, high-craft teams rooted in direct communication, rigorous engineering standards
+            that answer a why, and hands-on mentorship.</p>
+          <div class="card-tags">
+            <span class="tag-chip">Engineering Mentorship</span>
+            <span class="tag-chip">Software Craftsmanship</span>
+            <span class="tag-chip">Structured Autonomy</span>
+          </div>
+        </article>
+
+        <article class="bento-card">
+          <span class="capability-number">Architecture & Production</span>
+          <h3>Hands-On Technical Depth</h3>
+          <p>I still get close to the metal and get my hands dirty. From designing distributed microservice platforms to
+            hardening desktop and mobile applications and automating CI/CD DevSecOps pipelines, I build systems teams
+            can deploy with confidence.</p>
+          <div class="card-tags">
+            <span class="tag-chip">Enterprise Patterns</span>
+            <span class="tag-chip">Systems Resilience</span>
+            <span class="tag-chip">Capability Maturity Modeling</span>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="content-section connection-section" id="connect" aria-labelledby="connect-title">
       <div class="section-heading">
-        <h2 id="connect-title">Links</h2>
+        <p class="eyebrow">Direct Line</p>
+        <h2 id="connect-title">Let's Talk</h2>
+        <p class="section-lead">
+          When the architecture is complex, the timeline is tight, or the organization needs a decisive technology
+          strategist and builder.
+        </p>
       </div>
 
-      <nav aria-label="Social profiles">
-        <ul class="social-links">
-          @for (socialLink of socialLinks; track socialLink.url) {
+      <div class="connect-panel">
+        <div class="connect-callout">
+          <div>
+            <h3>Bring me your hardest problem.</h3>
+            <p>Whether you're at the startup concept phase, scaling an organization, or looking to expand into a new
+              market, my inbox is open.</p>
+          </div>
+          <a class="button button-primary" href="mailto:Hello@LukeKuenneke.com">Hello&#64;LukeKuenneke.com</a>
+        </div>
+
+        <nav aria-label="Social profiles">
+          <ul class="social-links">
+            @for (socialLink of socialLinks; track socialLink.url) {
             <li>
-              <a class="social-link" [href]="socialLink.url" [attr.aria-label]="socialLink.label + ' (opens in a new tab)'" target="_blank"
+              <a class="social-link" [href]="socialLink.url"
+                [attr.aria-label]="socialLink.label + ' (opens in a new tab)'" target="_blank"
                 rel="noopener noreferrer">
                 <fa-icon [icon]="socialLink.icon" aria-hidden="true"></fa-icon>
                 <span>{{ socialLink.label }}</span>
               </a>
             </li>
-          }
-        </ul>
-      </nav>
-    </section>
-
-    <section class="content-section testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
-      <div class="section-heading">
-        <h2 id="testimonials-title">Testimonials</h2>
+            }
+          </ul>
+        </nav>
       </div>
-      <app-testimonials></app-testimonials>
     </section>
   </main>
 

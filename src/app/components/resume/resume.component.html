@@ -1,10 +1,28 @@
-<main class="resume-redirect" aria-labelledby="resume-redirect-title">
-  <div class="resume-redirect-card">
-    <p class="eyebrow">Résumé</p>
-    <h1 id="resume-redirect-title">Opening the full résumé.</h1>
-    <p>The current résumé is available as an external document.</p>
-    <a class="resume-fallback" [href]="resumeUrl" target="_blank" rel="noopener noreferrer">
-      Continue to résumé <span>(opens in a new tab)</span>
-    </a>
-  </div>
-</main>
+<div class="resume-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <app-header></app-header>
+
+  <main class="resume-content" id="main-content" aria-labelledby="resume-title">
+    <section>
+      <div class="resume-hero-copy">
+        <p class="eyebrow">Track Record &amp; Credentials</p>
+        <h1 id="resume-title">Résumé</h1>
+        <p class="resume-lead">
+          A career built on shipping production-critical software, leading high-trust engineering organizations,
+          architecting distributed systems, and earning the respect of both the boardroom and the terminal.
+        </p>
+      </div>
+
+      <div class="resume-actions">
+        <a class="button button-primary" [href]="resumeUrl" target="_blank" rel="noopener noreferrer">
+          Open Full Résumé (PDF) <span>&nearr;</span>
+        </a>
+        <a class="button button-outline" href="mailto:Hello@LukeKuenneke.com">
+          Start a Conversation
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</div>
