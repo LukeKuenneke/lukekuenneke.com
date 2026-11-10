@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, RESPONSE_INIT, inject } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 
 import { FooterComponent } from '../footer/footer.component';
@@ -18,6 +19,7 @@ export class NotFoundComponent {
     if (responseInit) {
       responseInit.status = 404;
     }
+    inject(Meta).updateTag({ name: 'robots', content: 'noindex, nofollow' });
     inject(DOCUMENT).head.querySelector('link[rel="canonical"]')?.remove();
   }
 }

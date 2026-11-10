@@ -1,0 +1,29 @@
+# Luke Kuenneke
+
+> Technology Strategist & Builder specializing in organizational leadership, cloud-native and distributed systems architecture, DevSecOps, cybersecurity, and high-trust software engineering teams.
+
+Luke Kuenneke partners with organizations to align technical strategy, resilient architecture, and engineering execution. He steps into complex environments—from stalled cloud migrations and distributed microservice platforms to scaling engineering organizations—to isolate bottlenecks, restore delivery momentum, and ship production-critical software.
+
+## Core Practice Areas
+
+- **Strategy & Command**: Aligning engineering organizations, C-suite leadership, program directors, and stakeholders behind a clear technical direction; authoring winning technical proposals; setting architectural standards.
+- **Systems & Turnarounds**: Rescuing stalled cloud-native migrations, resolving production bottlenecks, and implementing DevSecOps and proactive agility.
+- **Culture & Craft**: Building low-ego, high-craft engineering teams rooted in direct communication, software craftsmanship, structured autonomy, and hands-on mentorship.
+- **Architecture & Production**: Designing distributed microservice platforms, hardening desktop and mobile applications, and automating CI/CD and DevSecOps delivery pipelines.
+
+## Key Pages
+
+- [Overview](https://www.lukekuenneke.com/): Core principles, capabilities, practice areas, and contact information.
+- [Testimonials](https://www.lukekuenneke.com/testimonials): Peer and leadership recommendations from Chief Technology Officers, Chief Operating Officers, Technical Fellows, Principal Scientists, and software engineers.
+- [Résumé](https://www.lukekuenneke.com/resume): Track record, credentials, and full PDF curriculum vitae.
+
+## Contact & Verified Profiles
+
+- Email: mailto:Hello@LukeKuenneke.com
+- LinkedIn: https://www.linkedin.com/in/luke-kuenneke
+- GitHub: https://github.com/LukeKuenneke
+- GitLab: https://gitlab.com/LukeKuenneke
+- Google Scholar: https://scholar.google.com/citations?user=Mah4kwQAAAAJ&hl=en
+- CodePen: https://codepen.io/LukeKuenneke
+- IMDb: https://www.imdb.com/name/nm4111022/
+- Bluesky: https://bsky.app/profile/lukekuenneke.bsky.social
