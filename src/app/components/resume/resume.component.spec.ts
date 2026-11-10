@@ -19,8 +19,6 @@ describe('ResumeComponent', () => {
 
   it('should create and expose the external résumé link', () => {
     expect(component).toBeTruthy();
-    const cards = fixture.nativeElement.querySelectorAll('.resume-card');
-    expect(cards.length).toBe(3);
     const pdfLink = fixture.nativeElement.querySelector(`a[href="${component.resumeUrl}"]`);
     expect(pdfLink).toBeTruthy();
   });

@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 export interface SeoPage {
@@ -12,12 +12,9 @@ export interface SeoPage {
 export class SeoService {
   private readonly siteName = 'Luke Kuenneke';
   private readonly siteUrl = 'https://www.lukekuenneke.com';
-
-  constructor(
-    private readonly title: Title,
-    private readonly meta: Meta,
-    @Inject(DOCUMENT) private readonly document: Document
-  ) {}
+  private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
+  private readonly document = inject(DOCUMENT);
 
   update(page: SeoPage): void {
     const fullTitle = page.title === this.siteName ? page.title : `${page.title} | ${this.siteName}`;

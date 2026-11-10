@@ -86,19 +86,6 @@
   color: var(--paper);
 }
 
-.filter-count {
-  background: rgba(23, 59, 49, 0.1);
-  border-radius: 999px;
-  font-family: var(--mono-font);
-  font-size: 0.7rem;
-  padding: 0.1rem 0.45rem;
-}
-
-.filter-pill.active .filter-count {
-  background: rgba(243, 246, 237, 0.18);
-  color: var(--accent-light);
-}
-
 @media (max-width: 52rem) {
   .testimonial-grid {
     grid-template-columns: 1fr;

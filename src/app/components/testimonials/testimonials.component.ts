@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import testimonialFile from '../../../assets/data/testimonials.json';
 import { Testimonial, TestimonialData } from './testimonial.model';
 
@@ -12,11 +12,10 @@ interface CategoryOption {
 @Component({
   selector: 'app-testimonials',
   templateUrl: './testimonials.component.html',
-  styleUrl: './testimonials.component.scss'
+  styleUrl: './testimonials.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsComponent {
-  @Input() listView = false;
-
   readonly testimonialData: Testimonial[] = (testimonialFile as TestimonialData).testimonials;
   selectedCategory: TestimonialCategory = 'all';
 
@@ -27,9 +26,6 @@ export class TestimonialsComponent {
     { id: 'engineering', label: 'Engineering & Security' }
   ];
 
-  // Curated executive, founder, and fellow testimonials for the home page Bento grid
-  readonly featuredTestimonials: Testimonial[] = this.selectFeaturedTestimonials();
-
   get filteredTestimonials(): Testimonial[] {
     if (this.selectedCategory === 'all') {
       return this.testimonialData;
@@ -39,13 +35,6 @@ export class TestimonialsComponent {
 
   selectCategory(category: TestimonialCategory): void {
     this.selectedCategory = category;
-  }
-
-  countByCategory(category: TestimonialCategory): number {
-    if (category === 'all') {
-      return this.testimonialData.length;
-    }
-    return this.testimonialData.filter(item => this.categorize(item) === category).length;
   }
 
   categorize(testimonial: Testimonial): Exclude<TestimonialCategory, 'all'> {
@@ -70,32 +59,5 @@ export class TestimonialsComponent {
       return 'principal';
     }
     return 'engineering';
-  }
-
-  private selectFeaturedTestimonials(): Testimonial[] {
-    const preferredTitles = [
-      'Chief Operating Officer',
-      'Co-Founder',
-      'Technical Fellow',
-      'Chief Architect',
-      'Vice President of Engineering',
-      'Division Manager'
-    ];
-
-    const picked: Testimonial[] = [];
-
-
-    for (const target of preferredTitles) {
-      const match = this.testimonialData.find(
-        item => item.titles.includes(target)
-      );
-      if (match) {
-        picked.push(match);
-      }
-      if (picked.length === 2) {
-        break;
-      }
-    }
-    return picked.length ? picked : this.testimonialData.slice(0, 4);
   }
 }

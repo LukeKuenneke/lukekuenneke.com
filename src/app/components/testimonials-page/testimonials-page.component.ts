@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -9,13 +9,14 @@ import { SeoService } from '../../seo.service';
   selector: 'app-testimonials-page',
   templateUrl: './testimonials-page.component.html',
   styleUrl: './testimonials-page.component.scss',
-  imports: [HeaderComponent, FooterComponent, TestimonialsComponent]
+  imports: [HeaderComponent, FooterComponent, TestimonialsComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsPageComponent {
-  constructor(seo: SeoService) {
-    seo.update({
-      title: 'Leadership & Peer Testimonials',
-      description: 'Unfiltered recommendations from the people I\'ve built and shipped with.',
+  constructor() {
+    inject(SeoService).update({
+      title: 'Leadership & Engineering Endorsements',
+      description: 'Unfiltered recommendations from CTOs, COOs, Technical Fellows, Principal Scientists, and software engineers on Luke Kuenneke\'s leadership and technical execution.',
       path: '/testimonials'
     });
   }

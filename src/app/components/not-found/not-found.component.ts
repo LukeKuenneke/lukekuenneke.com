@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, RESPONSE_INIT, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, RESPONSE_INIT, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { FooterComponent } from '../footer/footer.component';
@@ -9,7 +9,8 @@ import { HeaderComponent } from '../header/header.component';
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.scss',
-  imports: [RouterLink, HeaderComponent, FooterComponent]
+  imports: [RouterLink, HeaderComponent, FooterComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotFoundComponent {
   constructor() {

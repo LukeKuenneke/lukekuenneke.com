@@ -6,7 +6,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
-import { TestimonialsComponent } from '../testimonials/testimonials.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -18,7 +17,6 @@ describe('HomeComponent', () => {
         HomeComponent,
         HeaderComponent,
         FooterComponent,
-        TestimonialsComponent,
         NgOptimizedImage,
         RouterTestingModule,
         FontAwesomeModule

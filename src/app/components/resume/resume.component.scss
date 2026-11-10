@@ -9,18 +9,8 @@
 .resume-content {
   margin: 0 auto;
   max-width: 72rem;
+  min-height: 60vh;
   padding: 4rem 2rem 6rem;
-}
-
-.resume-hero {
-  align-items: flex-end;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-  padding-bottom: 2.5rem;
 }
 
 .resume-hero-copy {
@@ -39,94 +29,15 @@ h1 {
   margin: 1.25rem 0 0;
 }
 
-.resume-actions,
-.banner-actions {
+.resume-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-}
-
-.resume-grid {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-bottom: 3rem;
-}
-
-.resume-card {
-  background: var(--paper-elevated);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  padding: 1.75rem;
-}
-
-.card-number {
-  color: var(--accent-dark);
-  font-family: var(--mono-font);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.resume-card h2 {
-  font-size: 1.5rem;
-}
-
-.resume-card p {
-  color: var(--muted-ink);
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: auto;
-  padding-top: 0.75rem;
-}
-
-.resume-banner {
-  align-items: center;
-  background: var(--forest);
-  border-radius: var(--radius-lg);
-  color: var(--paper);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  padding: 2.5rem;
-}
-
-.resume-banner h2 {
-  color: var(--paper);
-  font-size: 2rem;
-  margin-bottom: 0.65rem;
-}
-
-.resume-banner p:not(.eyebrow) {
-  color: rgba(243, 246, 237, 0.82);
-  margin: 0;
-  max-width: 38rem;
-}
-
-@media (max-width: 56rem) {
-  .resume-grid {
-    grid-template-columns: 1fr;
-  }
+  margin-top: 2rem;
 }
 
 @media (max-width: 38rem) {
   .resume-content {
     padding: 3rem 1.25rem 4rem;
-  }
-
-  .resume-banner {
-    padding: 1.75rem;
   }
 }

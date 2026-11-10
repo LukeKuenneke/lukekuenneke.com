@@ -1,50 +1,31 @@
 @if (testimonialData.length) {
-  @if (listView) {
-    <div class="testimonial-filter-bar" role="toolbar" aria-label="Filter testimonials by role">
-      @for (cat of categories; track cat.id) {
-        <button
-          type="button"
-          class="filter-pill"
-          [class.active]="selectedCategory === cat.id"
-          [attr.aria-pressed]="selectedCategory === cat.id"
-          (click)="selectCategory(cat.id)">
-          <span>{{ cat.label }}</span>
-        </button>
-      }
-    </div>
+  <div class="testimonial-filter-bar" role="toolbar" aria-label="Filter testimonials by role">
+    @for (cat of categories; track cat.id) {
+      <button
+        type="button"
+        class="filter-pill"
+        [class.active]="selectedCategory === cat.id"
+        [attr.aria-pressed]="selectedCategory === cat.id"
+        (click)="selectCategory(cat.id)">
+        <span>{{ cat.label }}</span>
+      </button>
+    }
+  </div>
 
-    <div class="testimonial-grid">
-      @for (testimonial of filteredTestimonials; track $index) {
-        <blockquote class="testimonial-card">
-          <div class="quote-list">
-            @for (quote of testimonial.quotes; track quote) {
-              <p>{{ quote }}</p>
-            }
-          </div>
-          <footer>
-            @for (roleTitle of testimonial.titles; track roleTitle) {
-              <cite class="role-badge">{{ roleTitle }}</cite>
-            }
-          </footer>
-        </blockquote>
-      }
-    </div>
-  } @else {
-    <div class="testimonial-grid" aria-label="Featured professional testimonials">
-      @for (testimonial of featuredTestimonials; track $index) {
-        <blockquote class="testimonial-card">
-          <div class="quote-list">
-            @for (quote of testimonial.quotes; track quote) {
-              <p>{{ quote }}</p>
-            }
-          </div>
-          <footer>
-            @for (roleTitle of testimonial.titles; track roleTitle) {
-              <cite class="role-badge">{{ roleTitle }}</cite>
-            }
-          </footer>
-        </blockquote>
-      }
-    </div>
-  }
+  <div class="testimonial-grid">
+    @for (testimonial of filteredTestimonials; track $index) {
+      <blockquote class="testimonial-card">
+        <div class="quote-list">
+          @for (quote of testimonial.quotes; track quote) {
+            <p>{{ quote }}</p>
+          }
+        </div>
+        <footer>
+          @for (roleTitle of testimonial.titles; track roleTitle) {
+            <cite class="role-badge">{{ roleTitle }}</cite>
+          }
+        </footer>
+      </blockquote>
+    }
+  </div>
 }

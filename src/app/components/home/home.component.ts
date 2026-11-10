@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
@@ -8,7 +8,6 @@ import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar, 
 
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { SeoService } from '../../seo.service';
 
 interface SocialLink {
@@ -20,25 +19,17 @@ interface SocialLink {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrl: './home.component.scss',
   imports: [
     NgOptimizedImage,
     RouterLink,
     FontAwesomeModule,
     HeaderComponent,
-    FooterComponent,
-    TestimonialsComponent
-  ]
+    FooterComponent
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  constructor(seo: SeoService) {
-    seo.update({
-      title: 'Technology Strategist & Builder',
-      description: 'Luke Kuenneke is a technology strategist and builder who scales engineering organizations, untangles complex cloud-native and distributed architectures, and ships production-critical software.',
-      path: '/'
-    });
-  }
-
   readonly socialLinks: SocialLink[] = [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/luke-kuenneke', icon: faLinkedin },
     { label: 'GitHub', url: 'https://github.com/LukeKuenneke', icon: faGithub },
@@ -48,4 +39,12 @@ export class HomeComponent {
     { label: 'IMDb', url: 'https://www.imdb.com/name/nm4111022/', icon: faImdb },
     { label: 'Bluesky', url: 'https://bsky.app/profile/lukekuenneke.bsky.social', icon: faBluesky }
   ];
+
+  constructor() {
+    inject(SeoService).update({
+      title: 'Technology Strategist & Builder',
+      description: 'Luke Kuenneke is a technology strategist and builder who scales engineering organizations, untangles complex cloud-native and distributed architectures, and ships production-critical software.',
+      path: '/'
+    });
+  }
 }
