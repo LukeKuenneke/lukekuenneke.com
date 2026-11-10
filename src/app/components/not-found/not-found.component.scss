@@ -2,7 +2,7 @@
   margin: 0 auto;
   max-width: 72rem;
   min-height: 60vh;
-  padding: clamp(4rem, 12vw, 8rem) 2rem;
+  padding: clamp(4rem, 12vw, 8rem) clamp(1.25rem, 4vw, 2rem);
 }
 
 h1 {

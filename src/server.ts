@@ -14,6 +14,17 @@ const commonEngine = new CommonEngine();
 let app = express();
 app.disable("x-powered-by");
 
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  if (req.path.startsWith('/.well-known/') || req.path === '/ai-catalog.json' || req.path === '/llms.txt') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+  next();
+});
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -32,6 +43,7 @@ app.disable("x-powered-by");
 app.get(
   '**',
   express.static(browserDistFolder, {
+    dotfiles: 'allow',
     maxAge: '1y',
     index: 'index.html'
   }),

@@ -1,0 +1,33 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Luke Kuenneke",
+    "documentationUrl": "https://www.lukekuenneke.com/llms.txt",
+    "logoUrl": "https://www.lukekuenneke.com/assets/icons/icon-512x512.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:lukekuenneke.com:docs:llms-txt",
+      "displayName": "Luke Kuenneke Site Overview & Executive Summary (llms.txt)",
+      "type": "text/markdown",
+      "url": "https://www.lukekuenneke.com/llms.txt",
+      "description": "Structured Markdown profile, core engineering and leadership capabilities, and key site resources for Luke Kuenneke, Technology Strategist & Builder.",
+      "representativeQueries": [
+        "Who is Luke Kuenneke and what are his core technology leadership capabilities?",
+        "Find Luke Kuenneke's background in software architecture, cloud-native systems, and DevSecOps.",
+        "How can I contact Luke Kuenneke or view his executive resume and testimonials?"
+      ]
+    },
+    {
+      "identifier": "urn:air:lukekuenneke.com:data:testimonials",
+      "displayName": "Luke Kuenneke Leadership & Engineering Testimonials Dataset",
+      "type": "application/json",
+      "url": "https://www.lukekuenneke.com/assets/data/testimonials.json",
+      "description": "Machine-readable JSON collection of peer, executive, and engineering testimonials for Luke Kuenneke.",
+      "representativeQueries": [
+        "What do colleagues, executives, and engineers say about working with Luke Kuenneke?",
+        "Retrieve leadership and software engineering testimonials for Luke Kuenneke."
+      ]
+    }
+  ]
+}

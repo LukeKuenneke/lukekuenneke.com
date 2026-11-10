@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaConfig, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar, faImdb } from '@fortawesome/free-brands-svg-icons';
 
@@ -41,6 +41,7 @@ export class HomeComponent {
   ];
 
   constructor() {
+    inject(FaConfig).autoAddCss = false;
     inject(SeoService).update({
       title: 'Technology Strategist & Builder',
       description: 'Luke Kuenneke is a technology strategist and builder who scales engineering organizations, untangles complex cloud-native and distributed architectures, and ships production-critical software.',
