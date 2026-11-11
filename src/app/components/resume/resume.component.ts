@@ -16,8 +16,8 @@ export class ResumeComponent {
 
   constructor() {
     inject(SeoService).update({
-      title: 'Full Résumé',
-      description: 'Track record and résumé of Luke Kuenneke: technology strategist and builder specializing in Technology Leadership & Management, Software & Cloud Engineering, and Cybersecurity.',
+      title: 'Luke\'s Résumé',
+      description: 'Track record, credentials, and résumé of Luke Kuenneke: technology strategist and builder specializing in Technology Leadership & Management, Software & Cloud Engineering, and Cybersecurity.',
       path: '/resume'
     });
   }

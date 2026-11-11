@@ -15,8 +15,8 @@ import { SeoService } from '../../seo.service';
 export class TestimonialsPageComponent {
   constructor() {
     inject(SeoService).update({
-      title: 'Leadership & Engineering Endorsements',
-      description: 'Unfiltered recommendations from CTOs, COOs, Technical Fellows, Principal Scientists, and software engineers on Luke Kuenneke\'s leadership and technical execution.',
+      title: 'Leadership & Engineering Testimonials',
+      description: 'People\'s testimonials about Luke Kuenneke\'s collaboration, leadership, and delivery.',
       path: '/testimonials'
     });
   }
