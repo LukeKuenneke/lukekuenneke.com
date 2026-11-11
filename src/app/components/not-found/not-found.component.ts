@@ -20,6 +20,6 @@ export class NotFoundComponent {
       responseInit.status = 404;
     }
     inject(Meta).updateTag({ name: 'robots', content: 'noindex, nofollow' });
-    inject(DOCUMENT).head.querySelector('link[rel="canonical"]')?.remove();
+    inject(DOCUMENT).head.querySelectorAll('link[rel="canonical"]').forEach((link) => link.remove());
   }
 }

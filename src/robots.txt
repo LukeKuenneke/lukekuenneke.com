@@ -20,4 +20,3 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.lukekuenneke.com/sitemap.xml
-Agentmap: https://www.lukekuenneke.com/.well-known/ard.json

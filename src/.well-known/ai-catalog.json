@@ -9,7 +9,7 @@
     {
       "identifier": "urn:air:lukekuenneke.com:docs:llms-txt",
       "displayName": "Luke Kuenneke Site Overview & Executive Summary (llms.txt)",
-      "type": "text/markdown",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
       "url": "https://www.lukekuenneke.com/llms.txt",
       "description": "Structured Markdown profile, core engineering and leadership capabilities, and key site resources for Luke Kuenneke, Technology Strategist & Builder.",
       "representativeQueries": [

@@ -20,7 +20,8 @@
         </div>
 
         <figure class="hero-portrait">
-          <img ngSrc="assets/images/Luke-Kuenneke.png" width="645" height="903" priority
+          <img ngSrc="assets/images/Luke-Kuenneke.png" width="322" height="451" priority
+            sizes="(max-width: 42rem) 132px, 322px" ngSrcset="234w, 322w, 644w"
             alt="Portrait of Luke Kuenneke">
         </figure>
 
@@ -144,7 +145,11 @@
               <a class="social-link" [href]="socialLink.url"
                 [attr.aria-label]="socialLink.label + ' (opens in a new tab)'" target="_blank"
                 rel="noopener noreferrer">
-                <fa-icon [icon]="socialLink.icon" aria-hidden="true"></fa-icon>
+                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  [attr.viewBox]="'0 0 ' + socialLink.icon.icon[0] + ' ' + socialLink.icon.icon[1]">
+                  <path fill="currentColor" [attr.d]="socialLink.icon.icon[4]"></path>
+                </svg>
                 <span>{{ socialLink.label }}</span>
               </a>
             </li>

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { IMAGE_LOADER, ImageLoaderConfig, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { FaConfig, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { faBluesky, faLinkedin, faGithub, faGitlab, faCodepen, faGoogleScholar, faImdb } from '@fortawesome/free-brands-svg-icons';
 
+import { environment } from '../../../environments/environment';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { SeoService } from '../../seo.service';
@@ -23,9 +23,20 @@ interface SocialLink {
   imports: [
     NgOptimizedImage,
     RouterLink,
-    FontAwesomeModule,
     HeaderComponent,
     FooterComponent
+  ],
+  providers: [
+    {
+      provide: IMAGE_LOADER,
+      useValue: (config: ImageLoaderConfig) => {
+        const extensionIndex = config.src.lastIndexOf('.');
+        const imageWithoutExtension = config.src.substring(0, extensionIndex);
+        const extension = environment.production ? 'webp' : config.src.substring(extensionIndex + 1);
+        const widthSuffix = config.width && config.width < 644 ? `-${config.width}w` : '';
+        return `${imageWithoutExtension}${widthSuffix}.${extension}`;
+      }
+    }
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -41,7 +52,6 @@ export class HomeComponent {
   ];
 
   constructor() {
-    inject(FaConfig).autoAddCss = false;
     inject(SeoService).update({
       title: 'Technology Strategist & Builder',
       description: 'Luke Kuenneke is a technology strategist and builder who scales engineering organizations, untangles complex cloud-native and distributed architectures, and ships production-critical software.',

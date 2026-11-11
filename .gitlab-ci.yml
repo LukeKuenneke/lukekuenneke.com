@@ -33,9 +33,9 @@ compress-images:
   <<: [*image-optimizt]
   needs: [production-build]
   script:
-    - find . -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif -o -iname \*.svg \) -exec optimizt {} +
     - optimizt --avif .
     - optimizt --webp .
+    - find . -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif -o -iname \*.svg \) -exec optimizt {} +
   artifacts:
     paths:
       - dist
@@ -50,6 +50,9 @@ compress-files:
     - compress-images
   script:
     - apt install gzip brotli -qy
+    - cp dist/lukekuenneke.com/browser/404/index.html dist/lukekuenneke.com/browser/404.html
+    - cp dist/lukekuenneke.com/browser/resume/index.html dist/lukekuenneke.com/browser/resume.html
+    - cp dist/lukekuenneke.com/browser/testimonials/index.html dist/lukekuenneke.com/browser/testimonials.html
     - cd dist
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec gzip -k --best {} \; # gzip compress all files
     - find . -type f \( -iname "*.*" ! -iname "*.gz" ! -iname "*.br" \) -exec brotli -k {} \; #Brotli compress all files
@@ -68,7 +71,9 @@ pages:
   dependencies:
     - compress-files
   script:
-    - cp dist/lukekuenneke.com/browser/404/index.html dist/lukekuenneke.com/browser/404.html
+    - cp -f dist/lukekuenneke.com/browser/404/index.html dist/lukekuenneke.com/browser/404.html
+    - cp -f dist/lukekuenneke.com/browser/resume/index.html dist/lukekuenneke.com/browser/resume.html
+    - cp -f dist/lukekuenneke.com/browser/testimonials/index.html dist/lukekuenneke.com/browser/testimonials.html
     - mv dist/lukekuenneke.com/browser public
   artifacts:
     paths:
